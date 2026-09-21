@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Continuum Chicago · Mise en Vie</title>
-<meta name="description" content="Continuum Chicago is a legacy stewardship house. Mise en Vie is a four-day immersive celebration of one life, staged while the guest of honor is still here to receive it.">
+<title>Continuum Chicago · The Main Character Weekend</title>
+<meta name="description" content="Continuum Chicago composes the Main Character Weekend: a long weekend in Chicago, four days built entirely around one person, staged while they are here to receive it.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='%23e4002b' points='50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08'/%3E%3C/svg%3E">
+<meta property="og:title" content="Continuum Chicago · The Main Character Weekend">
+<meta name="theme-color" content="#1c3260">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -18,6 +21,7 @@
     --gold-soft:#d9bc6a;
     --ink:#2a2a28;
     --muted:#6b6a63;
+    --red:#e4002b;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -33,7 +37,7 @@
   /* ornament rule */
   .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px auto;}
   .ornament .line{height:1px;width:88px;background:var(--gold);opacity:.85;}
-  .ornament .diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);}
+  .ornament .star{width:12px;height:12px;}
 
   /* nav */
   nav{
@@ -42,7 +46,9 @@
     border-bottom:1px solid rgba(194,153,46,.45);
   }
   .nav-inner{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-  .wordmark{color:var(--navy);text-decoration:none;letter-spacing:.35em;font-weight:600;font-size:14px;text-transform:uppercase;}
+  .wordmark{color:var(--navy);text-decoration:none;letter-spacing:.35em;font-weight:600;font-size:14px;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;}
+  .star{fill:var(--red);display:block;}
+  .wordmark .star{width:30px;height:30px;flex:none;}
   .nav-links{display:flex;gap:26px;flex-wrap:wrap;}
   .nav-links a{color:var(--navy);text-decoration:none;font-size:15px;letter-spacing:.18em;text-transform:uppercase;}
   .nav-links a:hover{color:var(--gold);}
@@ -63,7 +69,9 @@
     text-align:center;
     position:relative;overflow:hidden;
   }
-  .hero-frame svg.seed{position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);opacity:.16;pointer-events:none;}
+  .hero-frame svg.seed{position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);opacity:.14;pointer-events:none;}
+  .hero-star{width:96px;height:96px;margin:30px auto 0;position:relative;}
+  @media (max-width:640px){.hero-star{width:72px;height:72px;}.wordmark{letter-spacing:.25em;font-size:13px;}}
   .hero-frame .smallcaps{color:var(--gold-soft);font-size:14px;}
   h1.masthead{
     font-size:clamp(54px,8vw,96px);
@@ -118,15 +126,16 @@
     padding:34px 6px;border-bottom:1px solid rgba(194,153,46,.5);
   }
   .day .label{color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:13px;font-weight:600;padding-top:6px;}
+  .day .where{display:block;margin-top:6px;letter-spacing:.08em;text-transform:none;font-style:italic;font-weight:400;color:var(--muted);font-size:15px;}
   .day h3{color:var(--navy);font-size:25px;font-weight:700;margin-bottom:6px;}
   .day p{font-size:17.5px;}
   @media (max-width:640px){.day{grid-template-columns:1fr;gap:8px;}}
 
   /* novella band */
-  #novella{background:var(--navy);color:var(--cream);}
-  #novella .kicker{color:var(--gold-soft);}
-  #novella h2{color:#fff;}
-  #novella .lede{color:var(--cream-soft);}
+  #book{background:var(--navy);color:var(--cream);}
+  #book .kicker{color:var(--gold-soft);}
+  #book h2{color:#fff;}
+  #book .lede{color:var(--cream-soft);}
   .novella-card{
     max-width:860px;margin:50px auto 0;display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:center;
   }
@@ -141,7 +150,8 @@
   .book .title{font-size:34px;font-weight:700;color:#fff;text-align:center;line-height:1.1;}
   .book .mini-orn{display:flex;align-items:center;gap:8px;}
   .book .mini-orn .line{height:1px;width:34px;background:var(--gold);}
-  .book .mini-orn .diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);}
+  .book .mini-orn .star{width:9px;height:9px;}
+  .book .cover-star{width:62px;height:62px;}
   .book .sub{font-style:italic;color:var(--cream-soft);font-size:15px;}
   .novella-copy p{color:var(--cream-soft);font-size:18px;}
   .listen-note{margin-top:14px;font-size:15.5px;color:var(--gold-soft);font-style:italic;}
@@ -169,6 +179,7 @@
 
   /* footer */
   footer{background:var(--navy);color:var(--cream-soft);text-align:center;padding:70px 24px 60px;}
+  footer .star{width:40px;height:40px;margin:0 auto 18px;}
   footer .smallcaps{color:var(--cream);font-size:13px;letter-spacing:.3em;}
   footer .colophon{margin-top:26px;font-size:15px;color:var(--gold-soft);line-height:2;}
   footer a{color:var(--gold-soft);text-decoration:none;}
@@ -179,12 +190,12 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="wordmark" href="#top">Continuum Chicago</a>
+    <a class="wordmark" href="#top" aria-label="Continuum Chicago home"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg>Continuum Chicago</a>
     <div class="nav-links">
-      <a href="#mise-en-vie">Mise en Vie</a>
+      <a href="#main-character">The Idea</a>
       <a href="#practice">The Practice</a>
-      <a href="#four-days">The Four Days</a>
-      <a href="#novella">The Salt Line</a>
+      <a href="#weekend">The Weekend</a>
+      <a href="#book">The Book</a>
       <a class="pod" href="#podcast">The Guest of Honor · Podcast</a>
       <a href="#begin">Begin</a>
     </div>
@@ -194,117 +205,116 @@
 <header class="hero" id="top">
   <div class="hero-frame">
     <svg class="seed" width="520" height="520" viewBox="0 0 520 520" fill="none" stroke="#c2992e" stroke-width="1">
-      <circle cx="260" cy="260" r="80"/>
-      <circle cx="260" cy="180" r="80"/><circle cx="260" cy="340" r="80"/>
-      <circle cx="191" cy="220" r="80"/><circle cx="329" cy="220" r="80"/>
-      <circle cx="191" cy="300" r="80"/><circle cx="329" cy="300" r="80"/>
-      <circle cx="260" cy="260" r="160"/><circle cx="260" cy="260" r="240"/>
+      <circle cx="260" cy="260" r="120"/><circle cx="260" cy="260" r="180"/><circle cx="260" cy="260" r="240"/>
     </svg>
     <div class="smallcaps">Continuum Chicago · Legacy Stewardship</div>
-    <h1 class="masthead">Mise en Vie</h1>
-    <div class="hero-sub">A four-day celebration of your life, while you are here to receive it.</div>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
-    <p class="hero-line">Most people receive their finest hour after they are gone. We moved it forward.</p>
+    <svg class="star hero-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg>
+    <h1 class="masthead">The Main Character Weekend</h1>
+    <div class="hero-sub">Four days in Chicago, composed entirely around you.</div>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+    <p class="hero-line">Friday to Monday. One life. The city as your set. Most people receive their finest hour after they are gone. We moved it forward.</p>
     <div class="hero-cta">
-      <a class="btn solid" href="#mise-en-vie">The Idea</a>
-      <a class="btn" href="#novella">Read The Salt Line</a>
+      <a class="btn solid" href="#weekend">See the Weekend</a>
+      <a class="btn" href="#book">Read the Book</a>
     </div>
   </div>
 </header>
 
-<section id="mise-en-vie">
+<section id="main-character">
   <div class="inner">
     <div class="kicker">The Idea</div>
     <h2>You, as the main character.</h2>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
-    <p class="dropcap">Mise en place is the chef's discipline: every ingredient found, tested, prepped, and set in its place before the first flame. Mise en Vie applies that discipline to a life. Over four composed days, one person moves through an immersive celebration built entirely from the particulars of their own story, surrounded by the people who supplied them. The rooms of their life, rebuilt and walkable. The dishes nobody has made right in decades, made right. The things usually saved for the eulogy, said out loud, to their face.</p>
-    <p>It is not a party and it is not a retrospective. It is a work of stewardship, composed to one person, performed once.</p>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+    <p class="dropcap">You are the one who makes the reservation, gives the toast, remembers the birthday, drives to the airport at five in the morning. You have been a supporting character in a hundred other people's big days. The Main Character Weekend turns that around: a long weekend in Chicago, built from the particulars of your own story and surrounded by the people who supplied them. The rooms of your life, rebuilt and walkable. The dishes nobody has made right in decades, made right. The things usually saved for the eulogy, said out loud, to your face.</p>
+    <p>It is not a party and it is not a retrospective. It is a work of stewardship, composed to one person, performed once, in the city we love.</p>
   </div>
 </section>
 
 <section id="practice" style="padding-top:0;">
   <div class="inner-wide">
-    <div class="kicker">The Practice</div>
-    <h2>How a life becomes four days.</h2>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <div class="kicker">The Practice · Mise en Vie</div>
+    <h2>How a life becomes a weekend.</h2>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
     <div class="movements">
       <div class="movement">
         <div class="num">Movement I</div>
         <h3>The Quiet Research</h3>
-        <p>It begins with conversation, not a questionnaire. Our curators sit with you, and then, discreetly and with your blessing, with the people who know you from every angle: family, oldest friends, the colleague, the neighbor, the bartender. Nobody is asked for a tribute. They are asked for particulars. The song that was always on. The exact color of the kitchen on Sunday mornings. The phrase you say without knowing you say it.</p>
+        <p>It begins with conversation, not a questionnaire. Our curators sit with the person planning the weekend, and then, discreetly, with the people who know you from every angle: family, oldest friends, the colleague, the neighbor, the bartender on Division who knows your order. Nobody is asked for a tribute. They are asked for particulars. The song that was always on. The exact color of the kitchen on Sunday mornings.</p>
       </div>
       <div class="movement">
         <div class="num">Movement II</div>
         <h3>The Test Kitchen<span class="secret-tag">the real secret</span></h3>
-        <p>Nothing reaches your four days untested. The recipe is cooked, tasted against living memory, and cooked again until the person who remembers it goes quiet. The record is found on the right format and played on the right machine. The scent is blended and re-blended. Every ingredient that embodies you is rehearsed until it is not a reference to your life but a piece of it.</p>
+        <p>Nothing reaches your weekend untested. A chef calls it mise en place; we call our version Mise en Vie. The recipe is cooked, tasted against living memory, and cooked again until the person who remembers it goes quiet. The record is found on the right format. The scent is blended and re-blended. Every ingredient that embodies you is rehearsed until it is not a reference to your life but a piece of it.</p>
       </div>
       <div class="movement">
         <div class="num">Movement III</div>
         <h3>The Archive</h3>
-        <p>Everything gathered in the research and everything captured across the four days is composed into a private family archive: the recordings, the transcripts, the recipes as tested, the score of the days. Held under vaulted, access-controlled retention for exactly as long as your family wishes, and not a day longer. Discretion is not a courtesy here. It is the craft.</p>
+        <p>Everything gathered in the research and captured across the four days is composed into a private archive: the speeches, the letters, the recipes as tested, the playlist, the score of the weekend. Held under vaulted, access-controlled retention for exactly as long as your family wishes, and not a day longer. Discretion is not a courtesy here. It is the craft.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="four-days" style="padding-top:20px;">
+<section id="weekend" style="padding-top:20px;">
   <div class="inner">
-    <div class="kicker">The Arc</div>
-    <h2>The Four Days</h2>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <div class="kicker">The Long Weekend</div>
+    <h2>Friday to Monday in Chicago</h2>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+    <p class="lede">Every weekend is composed to its person. The bones stay the same.</p>
     <div class="days">
       <div class="day">
-        <div class="label">Day One</div>
+        <div class="label">Friday<span class="where">The Threshold</span></div>
         <div>
-          <h3>The Threshold</h3>
-          <p>Arrival. The world quiets. You are received, softened, held. Nothing is asked of you.</p>
+          <h3>You are received.</h3>
+          <p>A private car at your door or the curb at O'Hare, with your calendar cleared and your bag already packed. The long way in, along the river as the sun turns the towers on Wacker to honey. A prepared room above the lake: your flowers, your record, your book marked at the page you left off. A small dinner somewhere that matters to your story. No speeches yet. Nothing is asked of you.</p>
         </div>
       </div>
       <div class="day">
-        <div class="label">Day Two</div>
+        <div class="label">Saturday<span class="where">The City Is Your Set</span></div>
         <div>
-          <h3>The Rooms</h3>
-          <p>The immersive day. Places, eras, and textures of your life, rebuilt and walkable. You move through your own story as its main character.</p>
+          <h3>You walk through your own story.</h3>
+          <p>Morning on the lakefront, with an old friend waiting to run the last mile. Then the rooms of your life, rebuilt and walkable: a childhood kitchen in a Fulton Market loft, a first classroom, a choir loft, a rooftop crew from 1994. The afternoon under glass, somewhere older than all of us, like the great conservatory in Garfield Park. Then a Chicago night chosen by the people who know you best: a jazz room, a house music floor, a blues bar, a night game under the lights.</p>
         </div>
       </div>
       <div class="day">
-        <div class="label">Day Three</div>
+        <div class="label">Sunday<span class="where">The Long Table</span></div>
         <div>
-          <h3>The Long Table</h3>
-          <p>The voices. Your people gathered, the tested dishes served, and the things usually saved for later said now, over food that tastes exactly right.</p>
+          <h3>The words usually saved for later.</h3>
+          <p>Everyone from every chapter, gathered at one long table for the first time. Every course is a chapter of your life, tested until it tastes exactly right. Between the courses, your people stand and say the particular things, the ones usually saved for the eulogy, out loud, to your face. Then the table becomes a party, and the party goes late.</p>
         </div>
       </div>
       <div class="day">
-        <div class="label">Day Four</div>
+        <div class="label">Monday<span class="where">The Fourth Morning</span></div>
         <div>
-          <h3>The Fourth Morning</h3>
-          <p>Quiet. Breath. The archive placed in your hands. You leave with the high-water mark on you.</p>
+          <h3>You leave with the high-water mark on you.</h3>
+          <p>A drive south along the lake before dawn to watch the sun come up over Lake Michigan from the limestone at the Point, or wherever your morning belongs. Breakfast, then a quiet hour in which the Archive is placed in your hands. Then home, to the same streets and the same calendar. Nothing has changed. Everything has.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="novella">
+<section id="book">
   <div class="inner-wide">
-    <div class="kicker">A Continuum Novella</div>
-    <h2>The Salt Line</h2>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
-    <p class="lede">Go once. That is all it asks.</p>
+    <div class="kicker">A Continuum Chicago Book</div>
+    <h2>Main Character</h2>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+    <p class="lede">A long weekend in Chicago, told in the second person.</p>
     <div class="novella-card">
       <div class="book">
         <div class="smallcaps">Continuum Chicago</div>
-        <div class="title">The Salt Line</div>
-        <div class="mini-orn"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
-        <div class="sub">A Continuum Novella</div>
+        <svg class="star cover-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg>
+        <div class="title">Main Character</div>
+        <div class="mini-orn"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+        <div class="sub">A Long Weekend in Chicago</div>
       </div>
       <div class="novella-copy">
-        <p>Before there was Mise en Vie there was a narrow door, a warm dark, and an hour a week. The Salt Line is the Continuum sensibility in story form: the float, the breath on dry land, the turning toward others. Read it before you book a conversation. It will tell you who we are better than any brochure.</p>
+        <p>Main Character follows one guest of honor through a Continuum Chicago long weekend: the quiet research that starts without them, the test kitchen they never see, a Friday arrival along the river, a Saturday spent inside the rooms of a life, a Sunday at The Long Table, and a Monday sunrise over Lake Michigan. Read it before you book a conversation. It will tell you what the weekend feels like better than any brochure.</p>
         <div style="margin-top:26px;">
-          <a class="btn solid" href="the-salt-line.pdf" download="ContinuumChicago_TheSaltLine.pdf">Download the PDF</a>
+          <a class="btn solid" href="main-character.pdf" download="ContinuumChicago_MainCharacter.pdf">Download the PDF</a>
           <a class="btn" href="https://elevenlabs.io/reader" target="_blank" rel="noopener">Listen with ElevenLabs</a>
         </div>
-        <p class="listen-note">Prefer to be read to? Download the PDF and drop it into the free ElevenLabs Reader app. Choose a voice, press play, and give it the hour.</p>
+        <p class="listen-note">Prefer to be read to? Download the PDF and drop it into the free ElevenLabs Reader app. Choose a voice, press play, and give it an hour.</p>
       </div>
     </div>
   </div>
@@ -314,10 +324,10 @@
   <div class="inner-wide">
     <div class="kicker">The Podcast</div>
     <h2>The Guest of Honor</h2>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
     <p class="lede">Every guest on this show has heard their eulogy, and lived to tell you about it.</p>
     <div class="inner" style="margin-top:34px;">
-      <p>Past guests of honor, and sometimes the families who conspired with us, sit down and walk through their four days: what they suspected, what undid them, and what it does to a person to hear it all while their heart is still keeping time.</p>
+      <p>Past main characters, and sometimes the families who conspired with us, sit down and walk through their weekend in Chicago: what they suspected, what undid them, and what it does to a person to hear it all while their heart is still keeping time.</p>
     </div>
     <div class="episodes">
       <div class="episode">
@@ -330,8 +340,8 @@
       <div class="episode">
         <div class="ep-num">II</div>
         <div>
-          <h3>Were you a guest of honor?</h3>
-          <p>If you have four days to talk about, we would love to hear how the tide came in. Write to us below.</p>
+          <h3>Were you a main character?</h3>
+          <p>If you have a weekend to talk about, we would love to hear how it went. Write to us below.</p>
         </div>
       </div>
     </div>
@@ -345,17 +355,19 @@
 <section id="begin">
   <div class="inner">
     <div class="kicker">Begin</div>
-    <h2>The once is a door.</h2>
-    <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
-    <p style="text-align:center;">Every engagement begins with a single, unhurried conversation. Whether it is for you, or for someone whose four days you would like to set in motion quietly, write to us.</p>
-    <p style="text-align:center;margin-top:30px;"><a class="email" href="mailto:hello@continuumchicago.com">hello@continuumchicago.com</a></p>
-    <p style="text-align:center;margin-top:18px;font-style:italic;color:var(--muted);font-size:16.5px;">Discretion from the first note. If the celebration is a surprise, it stays one.</p>
+    <h2>Tell us about the person.</h2>
+    <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+    <p style="text-align:center;">Every weekend begins with a single, unhurried conversation. Whether it is for you, or for someone whose weekend you would like to set in motion quietly, write to us. Three to six months ahead is ideal; we can move faster when a family needs us to.</p>
+    <p style="text-align:center;margin-top:30px;"><a class="email" href="mailto:chris@continuumchicago.com?subject=The%20Main%20Character%20Weekend">chris@continuumchicago.com</a></p>
+    <p style="text-align:center;margin-top:18px;font-style:italic;color:var(--muted);font-size:16.5px;">Discretion from the first note. If the weekend is a surprise, it stays one.</p>
   </div>
 </section>
 
 <footer>
+  <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg>
   <div class="smallcaps">Continuum Chicago</div>
-  <div class="ornament"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+  <div class="ornament"><div class="line"></div><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,0 61.5,30.08 93.3,25 73,50 93.3,75 61.5,69.92 50,100 38.5,69.92 6.7,75 27,50 6.7,25 38.5,30.08"/></svg><div class="line"></div></div>
+  <div class="colophon">The Main Character Weekend · Chicago, Illinois</div>
 </footer>
 
 </body>
